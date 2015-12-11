@@ -1,0 +1,12 @@
+-newItem1 = {date: "27 Luglio 2015", dateTime: "2015-07-27", title: "Hand Fun Meeting - Barcellona, 18-19 Settembre 2015"}
+-newItem2 = {date: "11 Luglio 2015", dateTime: "2015-07-11", title: "Fisiomano-Milano Chiusura estiva"}
+-newItem3 = {date: "08 Luglio 2015", dateTime: "2015-07-08", title: "53º Congresso Nazionale SICM - Viterbo, 8-10 Ottobre 2015"}
+
+-newItems = {newItem1, newItem2, newItem3}
+
+each item in newItems
+	.col-sm-12.col-md-4
+		.new-item.lefted
+			time.new-item__date(datetime=item.dateTime)=item.date
+			h3.new-item__title=item.title
+			a.new-item__button(href="#") Approfondisci

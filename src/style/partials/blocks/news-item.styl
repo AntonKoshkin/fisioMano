@@ -1,0 +1,57 @@
+.new-item
+	background lightgray
+	padding 30px 30px 60px
+	box-sizing border-box
+	margin-bottom 20px
+
+	@media screen and (min-width 840px)
+		min-height 250px
+		padding 30px
+		margin-bottom 30px
+
+	@media screen and (min-width 1240px)
+		min-height 330px
+		margin-bottom 55px
+
+	&__date
+		display inline-block
+		font-size fz-main
+		margin-bottom 10px
+		
+		@media screen and (min-width 1240px)
+			margin-bottom 25px
+	
+		@media screen and (min-width 840px)
+			margin-bottom 15px
+	
+	&__title
+		font-size fz-promo
+		
+		@media screen and (min-width 1240px)
+			font-size fz-mid
+
+	&__button
+		color darkergray
+		text-transform uppercase
+		font-size fz-main
+		position absolute
+		bottom 50px
+		
+		@media screen and (min-width 840px)
+			bottom 60px
+		
+		@media screen and (min-width 1240px)
+			bottom 85px
+		
+		&:after
+			position absolute
+			content ''
+			right -20px
+			top 0
+			bottom 0
+			margin auto
+
+			sprite($btn_arrow_gray)
+			
+// @media screen and (min-width 840px)
+// @media screen and (min-width 1240px)

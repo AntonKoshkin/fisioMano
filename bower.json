@@ -1,0 +1,22 @@
+{
+  "name": "ak_builder",
+  "description": "my front-end builder",
+  "main": "gulpfile.js",
+  "authors": [
+    "Anton Koshkin"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "https://github.com/AntonKoshkin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize-styl": "*"
+  }
+}

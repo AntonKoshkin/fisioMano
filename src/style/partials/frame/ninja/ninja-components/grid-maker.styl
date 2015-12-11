@@ -1,0 +1,50 @@
+for key, screen in widths								// iteration in widths
+	pref				= screen[prefix]					// extract prefix
+	cont-width		= screen[container-width]		// extract width of container
+	cont-pad			= screen[container-padding]	// extract paddings for container
+	col-num			= screen[column-number]			// extract number of columns
+	col-pad			= screen[column-padding]		// extract paddings for columns
+	min-screen-w 	= screen[min-screen]				// extract min screen width
+
+	@media screen and (min-width min-screen-w)	// iteration each screen width
+		body
+			min-width cont-width 						// that is fix, it's just necesary
+
+		.container											// styles for container
+			max-width cont-width 						// max-width
+			padding-left cont-pad						// paddings
+			padding-right cont-pad
+			box-sizing border-box 						// add border-box
+
+		.container-fluid									// fullwidth container
+			padding-left col-pad 						// paddings for container
+			padding-right col-pad
+
+		.row													// styles for row
+			margin-left -(col-pad)						// margins
+			margin-right -(col-pad)
+
+			@extend $row									// and other from variables.styl
+
+		.col-{pref}-0										// making none column
+			display none									// we won't see it
+
+		.col-off-{pref}-0
+			margin-left 0
+
+		${pref}-column										// that's for all columns, so make plceholder
+			padding-left col-pad 						// paddings
+			padding-right col-pad
+
+			@extend $column								// and other from variables.styl
+
+
+		for n in 1..col-num								// iteration for columns
+			.col-{pref}-{n}								// making name for column
+				width (100/12*n)%							// width for it
+
+				@extend ${pref}-column					// extend it with previous placeholder
+
+			if n < col-num									// making offsets, but we don't need
+				.col-off-{pref}-{n}						// 100% offset, do we?
+					margin-left (100/12*n)%

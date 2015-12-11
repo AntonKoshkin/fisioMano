@@ -1,0 +1,45 @@
+-sub1item1 = {href: '#', title: 'Punkt 1'}
+-sub1item2 = {href: '#', title: 'Punkt 2'}
+-sub1item3 = {href: '#', title: 'Punkt 3'}
+
+-sMenu1 = {sub1item1, sub1item2, sub1item3}
+
+-sub2item1 = {href: '#', title: 'Punkt 1'}
+-sub2item2 = {href: '#', title: 'Punkt 2'}
+-sub2item3 = {href: '#', title: 'Punkt 3'}
+
+-sMenu2 = {sub2item1, sub2item2, sub2item3}
+
+-sub3item1 = {href: '#', title: 'Punkt 1'}
+-sub3item2 = {href: '#', title: 'Punkt 2'}
+-sub3item3 = {href: '#', title: 'Punkt 3'}
+
+-sMenu3 = {sub3item1, sub3item2, sub3item3}
+
+-mItem1 = {href: '#', title: 'Home', sub: false}
+-mItem2 = {href: '#', title: 'News', sub: false}
+-mItem3 = {href: '#', title: 'Reabilitazione', sub: sMenu1}
+-mItem4 = {href: '#', title: 'Chi Siamo', sub: sMenu2}
+-mItem5 = {href: '#', title: 'Link Consigliati', sub: sMenu3}
+-mItem6 = {href: '#', title: 'Contatti', sub: false}
+
+-menu = {mItem1, mItem2, mItem3, mItem4, mItem5, mItem6}
+
+.col-sm-4.col-md-0.righted
+	.main-menu__burger#collapseButton
+		.main-menu__checker
+		.main-menu__strip
+.col-sm-6.col-off-sm-6.col-md-9.col-off-md-0
+	nav.main-menu.push-to-right#collapseMenu
+		ul.main-menu__list
+			each punkt in menu
+				if punkt.sub != false
+					li.main-menu__item.main-menu__item--with-sub
+						a.main-menu__a(href=punkt.href)=punkt.title
+						ul.main-menu__sublist
+							each sPunkt in punkt['sub']
+								li.main-menu__subitem
+									a.main-menu__suba(href=sPunkt.href)=sPunkt.title
+				else
+					li.main-menu__item
+						a.main-menu__a(href=punkt.href)=punkt.title

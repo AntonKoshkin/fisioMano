@@ -1,0 +1,78 @@
+.main-menu
+	&__burger
+		display inline-block
+		height 29px
+		width 30px
+		border 1px solid #aaa
+		border-radius 3px
+		position relative
+
+	&__strip
+		@extend $abs-c
+
+		&
+		&:before
+		&:after
+			width 30px
+			height 5px
+			background #000
+			border-radius 3px
+
+		&:before
+			@extend $abs-c-h
+			top -10px
+
+		&:after
+			@extend $abs-c-h
+			bottom -10px
+
+	@media screen and (min-width 840px)
+		&__burger
+			display none
+
+	&__item
+		position relative
+		display inline-block
+
+	&__a
+	&__suba
+		color textblue
+		font-size fz-header
+		display inline-block
+		transition text-shadow .5s
+
+		&:hover
+			text-shadow 0 0 15px #000
+			transition text-shadow .5s
+
+	&__a
+		padding 8px 15px
+
+	&__suba
+		padding 10px 15px
+
+	&__sublist
+		top 100%
+		list-style-type none
+
+		@media screen and (min-width 840px)
+			overflow hidden
+			position absolute
+			height 0
+
+	&__item:hover &__sublist
+		height auto
+
+	@media screen and (max-width 840px)
+		height 0
+		overflow hidden
+
+		&--open
+			height auto
+
+		&__item
+		&__subitem
+			display block
+
+		&__suba
+			padding-left 25px
