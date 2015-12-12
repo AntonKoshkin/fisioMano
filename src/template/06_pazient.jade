@@ -1,3 +1,13 @@
-section.pazient
-	.container
-		h2.pazient__title
+section#pazient.pazient
+	.container.centered
+		h2.pazient__title I pazienti raccontano
+		.row
+			.col-sm-12.col-md-10.col-lg-7
+				.pazient__comms
+					//- that makes 3 feedback items
+					include blocks/pazient-items
+				.pazient__pagination
+					span(data-id="0").pazient__dot.pazient__dot--checked
+					span(data-id="1").pazient__dot
+					span(data-id="2").pazient__dot
+				a.pazient__a(href="#") Leggi le testimonianze

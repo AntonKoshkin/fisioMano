@@ -1,0 +1,48 @@
+.pazient
+	padding 20px 0
+	
+	@media screen and (min-width 840px)
+		padding 40px 0
+		
+	@media screen and (min-width 840px)
+		padding 70px 0
+
+	&__comms
+		min-height 200px
+		position relative
+
+	&__title
+		font-size fz-big
+		font-weight normal
+		color textblue
+		margin-bottom 35px
+	
+	&__dot
+		display inline-block
+		width 12px
+		height 12px
+		box-shadow: inset 0 0 0 3px textblue
+		border-radius 50%
+		cursor pointer
+		margin 0 15px
+
+		@media screen and (min-width 840px)
+			margin 0 6px
+		
+		&--checked
+			background textblue
+			cursor default
+	
+	&__pagination
+		margin-bottom 65px
+	
+	&__a
+		font-size fz-main
+		text-transform uppercase
+		color gray
+		border 2px solid gray
+		font-weight bold
+		padding 16px 39px
+		display inline-block
+
+@import 'blocks/pazi-item'

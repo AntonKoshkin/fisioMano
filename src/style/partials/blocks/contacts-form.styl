@@ -1,0 +1,101 @@
+.cont-form
+	width 80%
+	margin auto
+	
+	@media screen and (min-width 840px)
+		max-width 500px
+		margin-right 60px
+	
+	@media screen and (min-width 1200px)
+		max-width 500px
+		margin-right 80px
+		float right
+
+	&__title
+		display block
+		margin auto
+		text-transform uppercase
+		font-size fz-main+1
+		font-weight bold
+	
+	&__input
+	&__text
+	&__button
+	&__label
+		font-size fz-header
+		width 100%
+		font-weight bold
+		border 0
+		outline none
+		
+	> *
+		margin-bottom 20px
+		
+	&__input
+	&__text
+	&__label
+		color gray
+		background lightestgray
+		
+	&__input
+	&__text
+	&__button
+	&__label
+		padding 18px
+		
+	&__text
+		height 150px
+	
+	&__selection
+		position relative
+		
+		&:after
+			display inline-block
+			position absolute
+			top 0
+			bottom 0
+			margin auto
+			right 18px
+			content ''
+			
+			sprite($arrow_down)
+	
+	&__select
+		cursor pointer
+	
+	&__options
+		position absolute
+		width 100%
+		top 100%
+		height 0
+		transition height .5s
+		overflow hidden
+		box-sizing border-box
+		
+		&--open
+			height 147px
+			transition height .5s
+			border-bottom 1px solid #000
+	
+	&__radio
+		display none
+		
+	&__label
+		display block
+		cursor pointer
+	
+	&__description
+		font-size fz-main
+		color gray7d
+		
+		
+	
+	&__text
+		resize none
+	
+	&__button
+		background textblue
+		color white
+			
+// @media screen and (min-width 840px)
+// @media screen and (min-width 1240px)

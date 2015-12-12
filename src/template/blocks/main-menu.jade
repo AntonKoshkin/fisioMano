@@ -1,28 +1,39 @@
+//- this code makes main menu
+
+//- that is first block of subitems
 -sub1item1 = {href: '#', title: 'Punkt 1'}
 -sub1item2 = {href: '#', title: 'Punkt 2'}
 -sub1item3 = {href: '#', title: 'Punkt 3'}
 
+//- all subitems of first big menu item in one submenu
 -sMenu1 = {sub1item1, sub1item2, sub1item3}
 
+//- that is second block of subitems
 -sub2item1 = {href: '#', title: 'Punkt 1'}
 -sub2item2 = {href: '#', title: 'Punkt 2'}
 -sub2item3 = {href: '#', title: 'Punkt 3'}
 
+//- all subitems of second big menu item in one submenu
 -sMenu2 = {sub2item1, sub2item2, sub2item3}
 
+//- that is thirst block of subitems
 -sub3item1 = {href: '#', title: 'Punkt 1'}
 -sub3item2 = {href: '#', title: 'Punkt 2'}
 -sub3item3 = {href: '#', title: 'Punkt 3'}
 
+
+//- all subitems of third big menu item in one submenu
 -sMenu3 = {sub3item1, sub3item2, sub3item3}
 
--mItem1 = {href: '#', title: 'Home', sub: false}
--mItem2 = {href: '#', title: 'News', sub: false}
--mItem3 = {href: '#', title: 'Reabilitazione', sub: sMenu1}
--mItem4 = {href: '#', title: 'Chi Siamo', sub: sMenu2}
--mItem5 = {href: '#', title: 'Link Consigliati', sub: sMenu3}
--mItem6 = {href: '#', title: 'Contatti', sub: false}
+//- all menu items. if item has subitems, than sub = submenu, if not - equals false
+-mItem1 = {href: '#body', title: 'Home', sub: false}
+-mItem2 = {href: '#hostro', title: 'Reabilitazione', sub: sMenu1}
+-mItem3 = {href: '#news', title: 'News', sub: false}
+-mItem4 = {href: '#tutori', title: 'Chi Siamo', sub: sMenu2}
+-mItem5 = {href: '#pazient', title: 'Link Consigliati', sub: sMenu3}
+-mItem6 = {href: '#contact', title: 'Contatti', sub: false}
 
+//- full menu
 -menu = {mItem1, mItem2, mItem3, mItem4, mItem5, mItem6}
 
 .col-sm-4.col-md-0.righted
@@ -32,14 +43,14 @@
 .col-sm-6.col-off-sm-6.col-md-9.col-off-md-0
 	nav.main-menu.push-to-right#collapseMenu
 		ul.main-menu__list
-			each punkt in menu
-				if punkt.sub != false
+			each punkt in menu 																	//- iterarion in menu, makes menu items
+				if punkt.sub != false 															//- if there is submenu in item, than make menu item
 					li.main-menu__item.main-menu__item--with-sub
 						a.main-menu__a(href=punkt.href)=punkt.title
 						ul.main-menu__sublist
-							each sPunkt in punkt['sub']
+							each sPunkt in punkt['sub'] 										//- and make iteration in submenu to make subitems
 								li.main-menu__subitem
 									a.main-menu__suba(href=sPunkt.href)=sPunkt.title
-				else
+				else 																					//- if there is no submenu just make menu item
 					li.main-menu__item
 						a.main-menu__a(href=punkt.href)=punkt.title

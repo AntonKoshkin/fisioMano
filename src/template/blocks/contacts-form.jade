@@ -1,0 +1,17 @@
+form.cont-form(action="", method="post")
+	legend.cont-form__title Inviaci un messagio
+	input.cont-form__input(type="text", name="name", placeholder="NOME", required)
+	input.cont-form__input(type="text", name="email", placeholder="E-MAIL", required)
+	.cont-form__selection
+		input.cont-form__input.cont-form__select(type="text", name="sede", placeholder="SEDE", value="", readonly, required)
+		.cont-form__options
+			input.cont-form__radio#option1(type="radio", name="sedeType", value="SEDE 1")
+			label.cont-form__label(for="option1") SEDE 1
+			input.cont-form__radio#option2(type="radio", name="sedeType", value="SEDE 2")
+			label.cont-form__label(for="option2") SEDE 2
+			input.cont-form__radio#option3(type="radio", name="sedeType", value="SEDE 3")
+			label.cont-form__label(for="option3") SEDE 3
+	textarea.cont-form__text(name="messagio", placeholder="MESSAGIO")
+	p.cont-form__description
+		| Cliccando su “Invia Messaggio” Confermo di aver letto l’informativa sulla privacy e accetto le condizioni riguardo al trattamento dei dati personali
+	input.cont-form__button(type="submit", value="INVIA MESSAGIO")

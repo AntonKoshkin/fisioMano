@@ -1,6 +1,9 @@
+//- this code makes list with items in it
+
+//- list items of this block
 -tutoriList = ['La riabilitazione della mano', 'La riabilitazione del gomito', 'Campi di intervento', 'Tutori', 'Piccoli consigli pratici', 'Terapie specialistiche', 'Casi clinici', 'Patologie']
 
 ul.tutori__list
-	each item in tutoriList
+	each item in tutoriList 				//- simple iteration in it
 		li.tutori__punkt
 			a.tutori__a(href='#')=item

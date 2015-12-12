@@ -1,0 +1,25 @@
+//- this code makes 3 feedbacks
+
+//- items of this block
+-paziItem1 = {text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus consequatur earum molestiae quo exercitationem aspernatur sunt ipsa, repellat labore quae.', name: 'Lorem,', company: 'Lorem ipsum dolor'}
+
+-paziItem2 = {text: 'A causa di una tenosinovite alla mano destra sono stato costretto a ridurre notevolmente qualsiasi mia attività che coinvolgesse l’uso della mano per un periodo di tempo che è andato dal Gennaio 2014 al Febbraio 2015.', name: 'FABIO,', company: 'Tenosinovite muscoli avambraccio'}
+
+-paziItem3 = {text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum inventore voluptas sequi illum labore ad, expedita in praesentium fugiat!', name: 'Lorem,', company: 'Lorem ipsum dolor'}
+
+//- all items in one
+-paziItems = {paziItem1, paziItem2, paziItem3}
+
+-n=1 														//- make var n = 1
+each item in paziItems 								//- iteration in items
+	if n == 1 											//- if it is the first item than it is active
+		.pazi-item.pazi-item--active
+			p.pazi-item__text=item.text
+			p.pazi-item__name=item.name
+			p.pazi-item__company=item.company
+		-n += 1 											//- and n now equals 2
+	else 													//- if it is not the first item make it not active
+		.pazi-item
+			p.pazi-item__text=item.text
+			p.pazi-item__name=item.name
+			p.pazi-item__company=item.company

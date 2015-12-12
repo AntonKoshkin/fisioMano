@@ -1,0 +1,28 @@
+.contacts
+	
+	.col-sm-12.col-md-6
+		padding-left 0
+		padding-right 0
+	
+	&__item
+		padding 35px 0
+		
+		&--left
+			@extend $clearfix
+		
+		&--right
+			background textblue
+			// box-sizing content-box
+			text-align center
+
+			@media screen and (min-width 840px)
+				text-align left
+
+			&:after
+				display inline-block
+				content ''
+				height 100%
+				vertical-align middle
+
+@import 'blocks/contacts-form'
+@import 'blocks/contatti'

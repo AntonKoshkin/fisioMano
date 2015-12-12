@@ -1,6 +1,7 @@
-section.news.centered
+section#news.news.centered
 	.container
 		h2.news__title News &amp; Eventi
 		.row
-			include blocks/mixin-news-item
-		a.news__button Leggi tutte le news
+			//- this thing makes this block and 3 items in it
+			include blocks/news-item
+		a.news__button(href="#") Leggi tutte le news

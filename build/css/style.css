@@ -217,6 +217,14 @@ td {
   position: relative;
   min-height: 1px;
 }
+.contacts__item--left:before,
+.contacts__item--left:after {
+  display: table;
+  content: '';
+}
+.contacts__item--left:after {
+  clear: both;
+}
 .row {
   font-size: 0;
 }
@@ -591,6 +599,7 @@ blockquote {
 }
 body {
   font-family: 'Raleway', sans-serif;
+  padding-top: 55px;
 }
 .main-menu__strip {
   content: '';
@@ -611,6 +620,14 @@ body {
 }
 .header {
   padding: 13px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+}
+.header--bordered {
+  border-bottom: 1px solid #005278;
 }
 .logo {
   display: inline-block;
@@ -674,6 +691,9 @@ body {
 .main-menu__sublist {
   top: 100%;
   list-style-type: none;
+  z-index: 1;
+  background: #fff;
+  width: 100%;
 }
 @media screen and (min-width: 840px) {
   .main-menu__sublist {
@@ -832,14 +852,14 @@ body {
   font-size: 12px;
   margin-bottom: 10px;
 }
-@media screen and (min-width: 1240px) {
-  .new-item__date {
-    margin-bottom: 25px;
-  }
-}
 @media screen and (min-width: 840px) {
   .new-item__date {
     margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .new-item__date {
+    margin-bottom: 25px;
   }
 }
 .new-item__title {
@@ -956,4 +976,287 @@ body {
 }
 .tutori__a {
   color: #fff;
+}
+.pazient {
+  padding: 20px 0;
+}
+@media screen and (min-width: 840px) {
+  .pazient {
+    padding: 40px 0;
+  }
+}
+@media screen and (min-width: 840px) {
+  .pazient {
+    padding: 70px 0;
+  }
+}
+.pazient__comms {
+  min-height: 200px;
+  position: relative;
+}
+.pazient__title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #005278;
+  margin-bottom: 35px;
+}
+.pazient__dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  box-shadow: inset 0 0 0 3px #005278;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 15px;
+}
+@media screen and (min-width: 840px) {
+  .pazient__dot {
+    margin: 0 6px;
+  }
+}
+.pazient__dot--checked {
+  background: #005278;
+  cursor: default;
+}
+.pazient__pagination {
+  margin-bottom: 65px;
+}
+.pazient__a {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #777;
+  border: 2px solid #777;
+  font-weight: bold;
+  padding: 16px 39px;
+  display: inline-block;
+}
+.pazi-item {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.pazi-item--active {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.pazi-item__text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+}
+.pazi-item__name,
+.pazi-item__company {
+  color: #005278;
+  font-weight: bold;
+  font-size: 12px;
+}
+.pazi-item__name {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.contacts .col-sm-12.col-md-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.contacts__item {
+  padding: 35px 0;
+}
+.contacts__item--right {
+  background: #005278;
+  text-align: center;
+}
+@media screen and (min-width: 840px) {
+  .contacts__item--right {
+    text-align: left;
+  }
+}
+.contacts__item--right:after {
+  display: inline-block;
+  content: '';
+  height: 100%;
+  vertical-align: middle;
+}
+.cont-form {
+  width: 80%;
+  margin: auto;
+}
+@media screen and (min-width: 840px) {
+  .cont-form {
+    max-width: 500px;
+    margin-right: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cont-form {
+    max-width: 500px;
+    margin-right: 80px;
+    float: right;
+  }
+}
+.cont-form__title {
+  display: block;
+  margin: auto;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+.cont-form__input,
+.cont-form__text,
+.cont-form__button,
+.cont-form__label {
+  font-size: 11px;
+  width: 100%;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+}
+.cont-form > * {
+  margin-bottom: 20px;
+}
+.cont-form__input,
+.cont-form__text,
+.cont-form__label {
+  color: #777;
+  background: #f5f5f5;
+}
+.cont-form__input,
+.cont-form__text,
+.cont-form__button,
+.cont-form__label {
+  padding: 18px;
+}
+.cont-form__text {
+  height: 150px;
+}
+.cont-form__selection {
+  position: relative;
+}
+.cont-form__selection:after {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 18px;
+  content: '';
+  background-image: url("../img/spritePng.png");
+  background-position: -408px -19px;
+  width: 12px;
+  height: 6px;
+}
+.cont-form__select {
+  cursor: pointer;
+}
+.cont-form__options {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  height: 0;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.cont-form__options--open {
+  height: 147px;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  border-bottom: 1px solid #000;
+}
+.cont-form__radio {
+  display: none;
+}
+.cont-form__label {
+  display: block;
+  cursor: pointer;
+}
+.cont-form__description {
+  font-size: 12px;
+  color: #7d7d7d;
+}
+.cont-form__text {
+  resize: none;
+}
+.cont-form__button {
+  background: #005278;
+  color: #fff;
+}
+.contatti {
+  display: inline-block;
+  color: #fff;
+  width: 230px;
+  vertical-align: middle;
+  text-align: left;
+}
+@media screen and (min-width: 840px) {
+  .contatti {
+    margin-left: 100px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .contatti {
+    margin-left: 200px;
+  }
+}
+.contatti__title {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 45px;
+}
+.contatti__list {
+  list-style-type: none;
+}
+.contatti__item {
+  position: relative;
+}
+.contatti__item:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-image: url("../img/spritePng.png");
+  background-position: -396px -19px;
+  width: 12px;
+  height: 11px;
+}
+.contatti__a {
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+  padding: 8px;
+}
+.footer {
+  padding: 40px 0 30px;
+  text-align: center;
+  font-size: 13px;
+  background: #292929;
+}
+.footer__content,
+.footer__credits {
+  margin-bottom: 30px;
+}
+.footer__text,
+.footer__copy,
+.footer__credits,
+.footer__button {
+  color: #aaa;
+}
+.footer__text,
+.footer__copy {
+  margin: 5px;
+}
+.footer__button {
+  border: 2px solid;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 6px 25px;
 }

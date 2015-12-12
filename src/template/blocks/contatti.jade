@@ -1,0 +1,18 @@
+//- this code makes list of links in contacts block
+
+//- this is links and their hrefs and titles
+-contItem1 = {href: '#', title: 'Fisiomano Bergamo'}
+-contItem2 = {href: '#', title: 'Fisiomano Milano'}
+-contItem3 = {href: '#', title: 'Fisiomano Pordenone'}
+-contItem4 = {href: '#', title: 'Fisiomano Treviso'}
+-contItem5 = {href: '#', title: 'Fisiomano Firenze'}
+
+//- this is massive of links
+-contatti = {contItem1, contItem2, contItem3, contItem4, contItem5}
+
+.contatti
+	h3.contatti__title Contatti
+	ul.contatti__list
+		each item in contatti	//- iterarion in massive of links
+			li.contatti__item
+				a.contatti__a(href=item.href)=item.title

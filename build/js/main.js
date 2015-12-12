@@ -9211,8 +9211,73 @@ return jQuery;
 
 jQuery(document).ready(function($) {
 
-	$('#collapseButton').on('click', function(event) {
-		$('#collapseMenu').toggleClass('main-menu--open');
+	// this code makes main menu collapse
+	
+	$('#collapseButton, .main-menu').on('click', function(event) {		// on button click
+		$('#collapseMenu').toggleClass('main-menu--open');					// add/remove class of opening
+	});
+	
+	// this code makes border-bottom to fixed menu
+	
+	$(window).scroll(function(event) {							// when we scroll
+		var scrollPos = $(this).scrollTop();					// position to variable
+		if (scrollPos >= 662) {										// if it is more then 662
+			$('.header').addClass('header--bordered');		// add border
+		} else {															// and if it's not
+			$('.header').removeClass('header--bordered');	// remove border
+		}
 	});
 
+	// this code makes tabs in comments
+	
+	$('.pazient__dot').on('click', function(event) {					// when we click the circle
+		$('.pazient__dot').removeClass('pazient__dot--checked');		// remove "rounder" class from all of circles
+		$(this).addClass('pazient__dot--checked');						// and add to clicked circle
+		
+		var ind = $(this).attr('data-id');									// put the data-id of circle to the variable
+	
+		$('.pazi-item')															// find all tabs
+			.removeClass('pazi-item--active')								// remove active class from each of them
+			.eq(ind)																	// find the one equales our circle
+			.addClass('pazi-item--active');									// and add it active class
+	});
+
+	// this code makes custom select
+	
+	$('.cont-form__selection').on('click', function(event) {						// click on pseudoselect
+		$('.cont-form__options').toggleClass('cont-form__options--open');		// open/close options
+	});
+	
+	$('.cont-form__radio').on('click', function(event) {							// click on option
+		var index = $(this).attr('value');												// puts its value to the variable
+		$('.cont-form__select').attr('value', index);								// puts options value to the pseudoselect
+		$('.cont-form__options').toggleClass('cont-form__options--open');		// and close options
+	});
+
+	// this code makes contacts__item--right block same height as contacts__item--left block
+	
+	var hei = $('.contacts__item--left').outerHeight() + 5;		// put the height of left block to variable (plus 5px)
+	$('.contacts__item--right').css('height', hei);					// make the height of right block equals to the left
+	
+	// if we change width of browser height of block can change
+	
+	$(window).resize(function(event) {									// so lets watch for width of viewport
+		var hei = $('.contacts__item--left').outerHeight() + 5;	// and do the same
+		$('.contacts__item--right').css('height', hei);
+	});
+
+	// this code makes smooth scroll to #
+	
+	$('a[href^="#"]').on('click', function(e){									// all links with attribute starts with "#"
+			e.preventDefault();															// cancel default action
+			if ($(this).attr('href').length > 1) {									// if href is not just "#"
+				point = $(this).attr('href');											// put the links way to the variable
+				coord = $(point).offset().top - 55									// put its position to the variable (minus fixed menu height)
+				$('html,body')																// choose the document
+					.stop()																	// if we have scroll animation now - stop it
+					.animate({																// and make animation of scroll
+						scrollTop: coord													// to this position
+					}, 1000);																// in this time
+			}
+		});
 });

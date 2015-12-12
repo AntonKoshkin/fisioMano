@@ -1,0 +1,40 @@
+.contatti
+	display inline-block
+	color white
+	width 230px
+	vertical-align middle
+	text-align left
+	
+	@media screen and (min-width 840px)
+		margin-left 100px
+		
+	@media screen and (min-width 1240px)
+		margin-left 200px
+	
+	&__title
+		font-size fz-big
+		font-weight normal
+		margin-bottom 45px
+	
+	&__list
+		list-style-type none
+	
+	&__item
+		position relative
+		
+		&:after
+			content ''
+			display inline-block
+			position absolute
+			right 0
+			top 0
+			bottom 0
+			margin auto
+			
+			sprite($btn_arrow_white)
+	
+	&__a
+		font-size fz-promo
+		color white
+		display inline-block
+		padding 8px
