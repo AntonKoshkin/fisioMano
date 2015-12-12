@@ -13,6 +13,7 @@
 .contatti
 	h3.contatti__title Contatti
 	ul.contatti__list
-		each item in contatti	//- iterarion in massive of links
+		//- iterarion in massive of links
+		each item in contatti
 			li.contatti__item
 				a.contatti__a(href=item.href)=item.title

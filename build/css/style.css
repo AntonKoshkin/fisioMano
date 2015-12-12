@@ -641,8 +641,6 @@ body {
   display: inline-block;
   height: 29px;
   width: 30px;
-  border: 1px solid #aaa;
-  border-radius: 3px;
   position: relative;
 }
 .main-menu__strip,
@@ -1100,8 +1098,7 @@ body {
   }
 }
 .cont-form__title {
-  display: block;
-  margin: auto;
+  text-align: center;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;

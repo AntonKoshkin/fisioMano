@@ -43,14 +43,18 @@
 .col-sm-6.col-off-sm-6.col-md-9.col-off-md-0
 	nav.main-menu.push-to-right#collapseMenu
 		ul.main-menu__list
-			each punkt in menu 																	//- iterarion in menu, makes menu items
-				if punkt.sub != false 															//- if there is submenu in item, than make menu item
+			//- iterarion in menu, makes menu items
+			each punkt in menu
+				//- if there is submenu in item, than make menu item
+				if punkt.sub != false
 					li.main-menu__item.main-menu__item--with-sub
 						a.main-menu__a(href=punkt.href)=punkt.title
 						ul.main-menu__sublist
-							each sPunkt in punkt['sub'] 										//- and make iteration in submenu to make subitems
+							//- and make iteration in submenu to make subitems
+							each sPunkt in punkt['sub']
 								li.main-menu__subitem
 									a.main-menu__suba(href=sPunkt.href)=sPunkt.title
-				else 																					//- if there is no submenu just make menu item
+					//- if there is no submenu just make menu item
+				else
 					li.main-menu__item
 						a.main-menu__a(href=punkt.href)=punkt.title
