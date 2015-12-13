@@ -11,4 +11,6 @@ jQuery(document).ready(function($) {
 	//= partials/fix-height.js
 
 	//= partials/scroll.js
+
+	//= partials/paralax.js
 });
