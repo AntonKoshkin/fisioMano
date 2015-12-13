@@ -5,6 +5,6 @@ $(window).scroll(function(event) {						// when scroll
 	var b = $(window).scrollTop()/3;
 	$('.promo').css({												// choose our promo
 		backgroundPosition: ['center ' + a + 'px'],		// add background position
-		padding: [(120 + b) + 'px 0 ' + (205 - b) + 'px']
+		padding: [(175 + b) + 'px 0 ' + (205 - b) + 'px']
 	});
 });

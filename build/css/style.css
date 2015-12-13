@@ -599,7 +599,6 @@ blockquote {
 }
 body {
   font-family: 'Raleway', sans-serif;
-  padding-top: 55px;
 }
 .main-menu__strip {
   content: '';
@@ -718,9 +717,9 @@ body {
 }
 .promo {
   background: #4e84b3 url("../img/promo__bgi.jpg") no-repeat;
-  background-position: center;
+  background-position: center top;
   background-size: cover;
-  padding: 50px 0;
+  padding: 175px 0 205px;
 }
 .promo__logo {
   width: 100%;
@@ -757,7 +756,6 @@ body {
 @media screen and (min-width: 840px) {
   .promo {
     position: relative;
-    padding: 120px 0 205px;
   }
   .promo:before {
     display: inline-block;
