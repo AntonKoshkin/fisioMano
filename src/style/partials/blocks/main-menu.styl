@@ -53,13 +53,13 @@
 		top 100%
 		list-style-type none
 		z-index 1
-		background white
 		width 100%
 
 		@media screen and (min-width 840px)
 			overflow hidden
 			position absolute
 			height 0
+			background white
 
 	&__item:hover &__sublist
 		height auto
@@ -67,9 +67,6 @@
 	@media screen and (max-width 840px)
 		height 0
 		overflow hidden
-
-		&--open
-			height auto
 
 		&__item
 		&__subitem

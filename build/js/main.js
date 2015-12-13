@@ -9214,7 +9214,12 @@ jQuery(document).ready(function($) {
 	// this code makes main menu collapse
 	
 	$('#collapseButton, .main-menu').on('click', function(event) {		// on button click
-		$('#collapseMenu').toggleClass('main-menu--open');					// add/remove class of opening
+		var c = $('.main-menu__list').height();								// height of list to variable
+		if ($('.main-menu').height() == 0) {									// if menu is closed
+			$('.main-menu').animate({height: c}, 500);						// open it
+		} 	else {																		// if it's not
+			$('.main-menu').animate({height: 0}, 500);						// close
+		};
 	});
 	
 	// this code makes border-bottom to fixed menu
@@ -9285,9 +9290,10 @@ jQuery(document).ready(function($) {
 	
 	$(window).scroll(function(event) {						// when scroll
 		var a = $(window).scrollTop()/2;						// half of scroll heigth put to variable
-		
-		$('.promo').css({											// choose our promo
-			backgroundPosition: ['center ' + a + 'px'],	// add background position
+		var b = $(window).scrollTop()/3;
+		$('.promo').css({												// choose our promo
+			backgroundPosition: ['center ' + a + 'px'],		// add background position
+			padding: [(120 + b) + 'px 0 ' + (205 - b) + 'px']
 		});
 	});
 });

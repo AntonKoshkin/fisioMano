@@ -624,7 +624,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 1;
-  background: #fff;
+  background: rgba(255,255,255,0.9);
 }
 .header--bordered {
   border-bottom: 1px solid #005278;
@@ -690,7 +690,6 @@ body {
   top: 100%;
   list-style-type: none;
   z-index: 1;
-  background: #fff;
   width: 100%;
 }
 @media screen and (min-width: 840px) {
@@ -698,6 +697,7 @@ body {
     overflow: hidden;
     position: absolute;
     height: 0;
+    background: #fff;
   }
 }
 .main-menu__item:hover .main-menu__sublist {
@@ -707,9 +707,6 @@ body {
   .main-menu {
     height: 0;
     overflow: hidden;
-  }
-  .main-menu--open {
-    height: auto;
   }
   .main-menu__item,
   .main-menu__subitem {
